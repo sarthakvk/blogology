@@ -1,4 +1,4 @@
-# [<img src ="static/img/168696.png width ="40" height ="30">LOGOLOGY](https://google.com)
+# [<img src="https://i.ibb.co/Lv2cgbD/168696.png" alt="168696" width="60" height="60"></a>LOGOLOGY](https://google.com)
 ***
 > Blogology is a blog application based on flask.
 
