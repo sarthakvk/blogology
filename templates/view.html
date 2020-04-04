@@ -1,0 +1,55 @@
+{% extends 'index.html' %}
+
+{% block body %}
+
+<div class="container" style="padding-bottom: 50px;padding-top: 50px;background-color: #b1c9c7;margin-top: 50px;margin-bottom: 100px;">
+
+        <!-- Start: Intro -->
+        <div class="intro">
+            <h1 class="text-center" style="font-size: 50px;">{{ blog.title }}</h1>
+            <div class="row">
+                <div class="col-sm-8">
+                                <p class="text-left lead" style="color: #313437;font-weight: bold;font-size: large;margin-left: 10px;">About: {{ blog.short }}</p>
+
+                </div>
+                <div class="col-sm-4">
+                    <p class="text-right">Last Updated: {{ blog.dat }}</p>
+                </div>
+            </div>
+            <p class="text-left" style="color: black;margin-left: 10px">{{ blog.breif }}</p>
+        </div>
+        <!-- End: Intro -->
+        <!-- Start: Buttons -->
+        <div class="row">
+
+            <div class="col-sm-3 ">
+
+            </div>
+            <div class="col-sm-2" style="margin-bottom: 2px;margin-top: 2px;margin-left: 2px;margin-right: 2px;width: 45;">
+                 <form action={{ url_for('delete') }}>
+                    <button  type="submit" class="btn btn-dark" name='delete' value={{ blog.id }}><i class="fa fa-trash" style="color: black;"></i> Delete</button>
+                </form>
+            </div>
+            <div class="col-sm-2 " style="margin-bottom: 2px;margin-top: 2px;margin-left: 2px;margin-right: 2px;width: 45;">
+                 <form  action={{ url_for('blogList') }}>
+                    <button  type="submit" class="btn btn-dark"><i class="fa fa-backward" style="color: black"></i> Back</button>
+                </form>
+
+            </div>
+            <div class="col-sm-2" style="margin-bottom: 2px;margin-top: 2px;margin-left: 2px;margin-right: 2px;width: 45;">
+                <form action={{ url_for('edit') }}>
+                    <button  type="submit" class="btn btn-dark" name="edit" value={{ blog.id }}><i class="fa fa-pencil" style="color: black"></i> Edit</button>
+                </form>
+
+            </div>
+
+
+
+        </div>
+
+
+        <!-- End: Buttons -->
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Blogology</title>
+    <link rel="icon" type="image/png"href="static/img/168696.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="static/css/styles.min.css">
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- Start: Article List -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href={{ url_for('blogList') }}><img src="static/img/168696.png" width="50px" height="40px"  style="transform: rotate(10deg);">logology</a>
+    <div class="navbar-inner">
+		<ul class="nav">
+			<li class="navbar-nav"><a class="nav-item nav-link" href={{ url_for('blogList') }}>Home</a></li>
+
+			<li class="navbar-nav"><a class="nav-item nav-link" href={{ url_for('add') }}>Add Blog</a></li>
+		</ul>
+	</div>
+
+    </nav>
+
+    {% block body %}
+
+    <div class="article-list">
+        <div class="container">
+            <!-- Start: Intro -->
+            <div class="intro">
+
+                <form action={{ url_for("add") }} >
+
+                    <h2 style="margin-left:30%">Latest Blogs</h2>
+                    <button type="submit" class="btn btn-primary" style="margin-left: 30%;color: #16181b">Add Your Own Blogs Now!</button>
+
+
+                </form>
+            </div>
+            <!-- End: Intro -->
+            <!-- Start: Articles -->
+
+
+            {% for i in data %}
+
+
+                <div class="row articles" >
+
+                    <div class="col-sm-2"></div>
+
+
+
+                     <div class="col-sm-7 item blog" style="box-shadow:10px;background: #b1c9c7;margin-left: 5%;margin-right: 5%;margin-top: 5px;margin-bottom: 5px;padding-right: 20px;padding-left: 20px;">
+
+
+
+
+
+                         <div class="content" style="height: 250px">
+
+
+                                <h2 class="text-center">{{ i.title }}</h2>
+
+
+                                <p class="text-center" style="color: #16181b;">{{ i.short }}</p>
+
+
+                         </div>
+
+
+
+
+
+                        <div class="row ">
+
+
+
+                            <div class="col-sm-4">
+
+
+                                <form action={{ url_for('delete') }}>
+
+
+                                    <button  type="submit" class="btn btn-primary"  style="margin-top: 4px;margin-bottom: 4px;padding-right: 12px;padding-left: 12px;" name='delete' value={{ i.id }}><i class="fa fa-trash" style="color: black;"></i> Delete</button>
+
+
+                                </form>
+
+
+                            </div>
+
+
+
+                            <div class="col-sm-4">
+
+                                    <form  action={{ url_for('view') }}>
+
+                                        <button  type="submit" class="btn btn-primary" style="margin-top: 4px;margin-bottom: 4px;padding-right: 15px;padding-left: 15px;" name="view" value={{ i.id }}><i class="fa fa-eye" style="color: black"></i> View</button>
+
+                                    </form>
+
+                            </div>
+
+                            <div class="col-sm-4">
+
+                                <form action={{ url_for('edit') }}>
+
+                                <button  type="submit" class="btn btn-primary" style="margin-top: 4px;margin-bottom: 4px;padding-right: 20px;padding-left: 20px;" name="edit" value={{ i.id }}><i class="fa fa-pencil" style="color: black"></i> Edit</button>
+
+                                </form>
+
+                            </div>
+
+                        </div><br>
+
+                        <p class="text-right" style="color: #16181b">Last Updated: {{ i.dat }}</p>
+{#                        <div class="col-sm-3></div>#}
+
+                </div>
+                </div>
+
+                {% endfor %}
+
+    <!-- End: Articles -->
+    </div>
+    </div>
+
+    {% endblock %}
+    <!-- End: Article List -->
+
+
+
+
+
+{#Scrip for Makeing current link active#}
+    <script>
+    $('.nav a').each(function(i,obj) {
+        if(location.pathname == $(this).attr('href')){
+            $(this).addClass('active')
+        }
+
+    })
+</script>
+{#------------------------------------------------------#}
+{% block script %}
+    {% endblock %}
+    <!-- Footer -->
+<footer class="page-footer font-small navbar-dark bg-dark" >
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3" style="color: #f1f7fc">© 2020 Copyright:
+    <a  href="https://www.github.com/sarthakchaudhary13/"> Sarthak Vineet Kumar</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

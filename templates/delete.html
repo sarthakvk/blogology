@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+
+{% block body %}
+
+
+    <div class="jumbotron">
+        <h1>Remove Blog</h1>
+        <p class="lead">{{ blog.title }}</p>
+        <p>Are you sure you want to remove the Blog?</p>
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            <div class="form-check">{{ form.choice }}</div>
+            {{ form.submit() }}
+        </form>
+    </div>
+
+{% endblock %}
