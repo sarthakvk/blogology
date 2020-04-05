@@ -1,8 +1,10 @@
+#######IMPORTS#########
+
 from flask import Flask, render_template, url_for, redirect, request
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 import os
-from forms import *
+from forms import Add,Edit,Remove
 from datetime import date
 
 
@@ -94,9 +96,7 @@ def add():
 
         return render_template('view.html',blog = new_blog)
 
-    else:
 
-        print(form.errors)#for printing errors if form does not validate
 
 
     return render_template("add.html",form=form)
@@ -123,14 +123,10 @@ def delete():
 
             db.session.commit()
 
-            return redirect(url_for('blogList'))
 
-        else:
+        return redirect(url_for('blogList'))
 
-            return redirect(url_for('blogList'))
-    else:
 
-        print(form.errors)
 
     return render_template('delete.html',form = form,blog  = blog)
 
@@ -204,4 +200,4 @@ def edit():
 if __name__ == '__main__':
 
 
-    app.run(debug=True,port=5000)
+    app.run()
