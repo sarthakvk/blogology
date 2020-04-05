@@ -43,7 +43,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TEXT" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../github" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="DjangoTestsConfigurationType">
@@ -207,7 +207,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1585988970699</updated>
-      <workItem from="1585988976444" duration="33337000" />
+      <workItem from="1585988976444" duration="34024000" />
     </task>
     <servers />
   </component>
@@ -223,6 +223,10 @@
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="386" y="202" width="583" height="404" key="#com.intellij.fileTypes.FileTypeChooser/0.27.1366.741@0.27.1366.741" timestamp="1586027413989" />
+    <state x="466" y="155" width="424" height="491" key="FileChooserDialogImpl" timestamp="1586031802787">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="466" y="155" width="424" height="491" key="FileChooserDialogImpl/0.27.1366.741@0.27.1366.741" timestamp="1586031802787" />
     <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1586006511931">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
